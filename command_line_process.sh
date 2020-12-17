@@ -30,6 +30,9 @@ git --version  # Confirm this has worked
 git config --global user.name "YourUserName"
 git config --global user.email "YourEmailAdress"
 
+# Start project with npm
+npm init
+
 # Install Gatsby CLI
 npm install --global gatsby-cli  # Ignore warnings??
 
