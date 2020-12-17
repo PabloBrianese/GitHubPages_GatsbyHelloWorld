@@ -30,9 +30,6 @@ git --version  # Confirm this has worked
 git config --global user.name "YourUserName"
 git config --global user.email "YourEmailAdress"
 
-# Start project with npm
-npm init
-
 # Install Gatsby CLI
 npm install --global gatsby-cli  # Ignore warnings??
 
@@ -42,3 +39,22 @@ gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world  #
 # Start development server
 cd hello-world
 gatsby develop
+
+# Install gh-pages package
+# First install typescript manually, because it a 'peer dependency'
+npm install --global typescript  # As is recommended in the typescript page
+npm install typescript --save-dev  # Add peer dependency manually
+
+npm install gh-pages --save-dev  # This and future npm packages have to be installed from the hello-world directory
+
+# Add /reponame path prefix as an option to gatsby-config.js
+module.exports = {
+  pathPrefix: "/reponame",  # This is the line we are adding
+}
+
+# Add a deploy script to package.json
+{
+  "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"  # This is the line we are adding
+  }
+}
