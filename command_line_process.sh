@@ -1,4 +1,6 @@
 # Command line process
+mkdir GitHubPages_GatsbyProject
+cd GitHubPages_GatsbyProject
 
 # Update Ubuntu
 sudo apt update
@@ -8,7 +10,7 @@ sudo apt upgrade
 sudo apt install curl
 
 # Download nvm installation bash script and execute it
-stdout='-'
+stdout='-'  # This alias is used by curl
 curl --output $stdout https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
 nvm --version  # Confirm this has worked 
@@ -32,3 +34,8 @@ git config --global user.email "YourEmailAdress"
 npm install --global gatsby-cli  # Ignore warnings??
 
 # Create a Gatsby site
+gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world  # This will take a while
+
+# Start development server
+cd hello-world
+gatsby develop
