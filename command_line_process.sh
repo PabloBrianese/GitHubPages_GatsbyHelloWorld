@@ -59,5 +59,5 @@ module.exports = {
   }
 }
 
-# Deploy project to gh-pages branch from main branch
+# Deploy project to gh-pages branch from main branch, create it first if it doesn't exist
 npm run deploy  # From hello-world directory
